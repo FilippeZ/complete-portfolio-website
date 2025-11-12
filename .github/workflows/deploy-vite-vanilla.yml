@@ -56,10 +56,22 @@ jobs:
         uses: actions/deploy-pages@v4
 
 
-### What to Do Next
+#### Βήμα 3: Αποθήκευση (Commit)
 
-1.  **Commit** this updated workflow file to your `main` branch.
-2.  **Push** your commit to GitHub.
-3.  Go to the **"Actions"** tab on your repository.
+1.  Στο κάτω μέρος της σελίδας, πατήστε το πράσινο κουμπί **"Commit changes..."**.
+2.  Πατήστε ξανά το πράσινο κουμπί **"Commit changes"** στο παράθυρο που θα ανοίξει.
 
-You should see the *new* workflow run, and this time it should complete successfully!
+---
+
+### Τι να Παρακολουθήσετε Τώρα
+
+Αυτό το "Commit" (Βήμα 3) θα ξεκινήσει αμέσως ένα νέο workflow.
+
+Πηγαίνετε στην καρτέλα **"Actions"**.
+
+Κάντε κλικ στο *νέο* run που μόλις ξεκίνησε. Αυτή τη φορά, θα πρέπει να δείτε:
+* Τα βήματα `Set up Node`, `Install dependencies`, `Build` να τρέχουν.
+* **ΔΕΝ** πρέπει να δείτε πουθενά τη λέξη `jekyll`.
+* Το βήμα `Deploy to GitHub Pages` θα πρέπει να ολοκληρωθεί σε 10-20 δευτερόλεπτα και να πάρει πράσινο ✔.
+
+Αν συμβούν αυτά, το site σας θα είναι live σε 1-2 λεπτά!
