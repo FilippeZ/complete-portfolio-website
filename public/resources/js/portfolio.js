@@ -430,7 +430,7 @@
                     //
                     const imgSrc = src.startsWith('/') 
                         ? src  // Χειρίζεται το "travel-db" που έφτιαξες: /COMPLETE-PORTFOLIO-WEBSITE/public/...
-                        : `${BASE_PATH}/resources/img/portfolios/${src}`; // Διορθώνει ΟΛΑ ΤΑ ΑΛΛΑ: /COMPLETE-PORTFOLIO-WEBSITE/resources/img/portfolios/web/1.jpg
+                        : `${BASE_PATH}/tree/main/public/resources/img/portfolios/${src}`; // Διορθώνει ΟΛΑ ΤΑ ΑΛΛΑ: /COMPLETE-PORTFOLIO-WEBSITE/resources/img/portfolios/web/1.jpg
                     
                     // Added 'border-radius: 0;' to ensure images are rectangular.
                     return `
