@@ -10,7 +10,7 @@
  * • Reduced motion support
  * • Graceful fallbacks & error handling
  *
- * @version 2.6.0 (Final Subdirectory Pathing Fix)
+ * @version 2.7.0 (Robust Pathing Logic Fix)
  * @author ZenithDx
  */
 (() => {
@@ -151,10 +151,7 @@
             client: "Global Travel Co",
             tools: "MySQL, Java Swing, JDBC, Stored Procedures, Triggers, ERD, Normalization, ETL, Data Integrity, Constraints, CRUD, Indexing, Query Optimization, Transactions, ACID",
             link: "https://traveldb.app",
-            //
-            // (Μπορείς να αφήσεις το "working fix" σου εδώ, θα δουλέψει)
-            //
-            gallery: ["web/5.jpg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/database/db1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/database/db2.jpg"]
+            gallery: ["web/5.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/database/db1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/database/db2.jpg"]
         },
         "etl-covid": {
             title: "End-to-End ETL Pipeline Architecture for Economic Impact Analytics",
@@ -164,7 +161,7 @@
             client: "World Bank Partner",
             tools: "Python, Pandas, NumPy, MySQL, Matplotlib, Seaborn, Jupyter, ETL, Data Cleaning, Aggregation, Grouping, SQLAlchemy, CSV, JSON, Visualization",
             link: "https://covid-etl.io",
-            gallery: ["web/3.jpeg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/covid/cov1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/covid/cov2.jpg"]
+            gallery: ["web/3.jpeg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/covid/cov1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/covid/cov2.jpg"]
         },
         "genomic": {
             title: "Genomic Data Pipeline & Bioinformatics",
@@ -174,7 +171,7 @@
             client: "Genomics Research Lab",
             tools: "Biopython, Entrez, GenBank, EMBOSS, Needle, MEME Suite, FastQC, NGS, FASTQ, Phred, BLAST, ClustalW, SAMtools, BEDTools, VCF",
             link: "https://genomic-pipeline.org",
-            gallery: ["web/2.jpg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/bio/bio1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/bio/bio2.jpg"]
+            gallery: ["web/2.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/bio/bio1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/bio/bio2.jpg"]
         },
         "indexing-poc": {
             title: "Multidimensional Indexing for High-Performance Analytics",
@@ -184,7 +181,7 @@
             client: "Healthcare AI Startup",
             tools: "Python, Scikit-learn, NumPy, Annoy, LSH, MinHash, K-D Tree, Octree, R-Tree, Range Tree, kNN, ANN, Benchmarking, Profiling, Memory Analysis",
             link: "https://indexing-poc.com",
-            gallery: ["web/6.jpg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/multi/mu1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/multi/mu2.jpg"]
+            gallery: ["web/6.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/multi/mu1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/multi/mu2.jpg"]
         },
 
         // GENERATIVE AI (6 projects)
@@ -196,7 +193,7 @@
             client: "Emergency Departments",
             tools: "LangGraph, Ollama, Llama 3.2, FastAPI, TensorRT, MIG, GGUF, ReAct, Self-Refine, RAG, FAISS, ColBERT, HGT, Grad-CAM, Captum",
             link: "https://zenithdx.ai",
-            gallery: ["logo/1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/zenith/z3.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/zenith/z4.jpg"]
+            gallery: ["logo/1.jpg", "/public/resources/img/portfolios/zenith/z3.jpg", "/public/resources/img/portfolios/zenith/z4.jpg"]
         },
         "melanoma-fl": {
             title: "Multicloud GenAI & Federated Learning – Personalized Melanoma Detection",
@@ -206,7 +203,7 @@
             client: "Cancer Research Consortium",
             tools: "TensorFlow Federated, Azure ML, AWS SageMaker, PySyft, Flower, Docker, Kubernetes, LoG, DoG, GLCM, NLP, EHR, Bayesian Network, CPDs, FIFO",
             link: "https://fl-melanoma.org",
-            gallery: ["logo/2.jpg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/fl/fl1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/fl/fl2.jpg"]
+            gallery: ["logo/2.jpg", "/public/resources/img/portfolios/fl/fl1.jpg", "/public/resources/img/portfolios/fl/fl2.jpg"]
         },
         "wgan-telco": {
             title: "Privacy-Preserving GenAI for 5G Telecommunications - WGAN-GP Production Architecture",
@@ -216,7 +213,7 @@
             client: "Tier-1 Telco",
             tools: "PyTorch, WGAN-GP, NVIDIA A100, DGX, Z-Score, LeakyReLU, Wasserstein Loss, Gradient Penalty, MSE, KL Divergence, Cosine Similarity, Anomaly Detection, 5G, Time-Series, Synthetic Data",
             link: "https://wgan-telco.ai",
-            gallery: ["logo/3.png","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/gan/gan1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/gan/gan2.jpg"]
+            gallery: ["logo/3.png", "/public/resources/img/portfolios/gan/gan1.jpg", "/public/resources/img/portfolios/gan/gan2.jpg"]
         },
         "knn-parallel": {
             title: "Hybrid Parallel k-NN Regression",
@@ -226,7 +223,7 @@
             client: "Edge AI Research",
             tools: "C++, OpenMP, MPI, IDW, k-NN, Regression, Parallel For, Taskloop, Multicore, Load Balancing, Intel i7, Profiling, Benchmarking, Scalability, Shared Memory",
             link: "https://knn-parallel.com",
-            gallery: ["logo/4.jpg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/knn/knn1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/knn/knn2.jpg"]
+            gallery: ["logo/4.jpg", "/public/resources/img/portfolios/knn/knn1.jpg", "/public/resources/img/portfolios/knn/knn2.jpg"]
         },
         "mpi": {
             title: "Designing Scalable Architectures for Distributed ML Workloads",
@@ -236,7 +233,7 @@
             client: "Edge AI Research",
             tools: "C++, MPI, MPI_Scatter, MPI_Gather, MPI_Cart_create, Ring Topology, Cartesian Grid, Sub-blocking, Concurrent Processing, Scalability, Latency, Distributed ML, Matrix Multiplication, High-Performance Computing, HPC",
             link: "https://mpi-distributed.com",
-            gallery: ["logo/8.jpg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/paral/paral1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/paral/paral2.jpg"]
+            gallery: ["logo/8.jpg", "/public/resources/img/portfolios/paral/paral1.jpg", "/public/resources/img/portfolios/paral/paral2.jpg"]
         },
 
         // CLOUD SOLUTIONS (6 projects)
@@ -248,7 +245,7 @@
             client: "Healthcare Enterprise",
             tools: "Azure AI Studio, OpenAI GPT-4, AI Search, Text Analytics, UMLS, Computer Vision, Document Intelligence, Custom Vision, NLP, OCR, Entity Linking, PaaS, HITL, Playground, Multimodal",
             link: "https://azure-ai.health",
-            gallery: ["card/2.png","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/cloud/cl1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/cloud/cl2.jpg"]
+            gallery: ["card/2.png", "/public/resources/img/portfolios/cloud/cl1.jpg", "/public/resources/img/portfolios/cloud/cl2.jpg"]
         },
         "azure-security": {
             title: "Architectural Risk Analysis and Azure Security Design for Cloud Platforms",
@@ -258,7 +255,7 @@
             client: "Health System",
             tools: "Entra ID, Key Vault, Defender, MFA, FIDO2, Passkeys, Zero Trust, IAM, SSL/TLS, RCA, Threat Modeling, Biometrics, Passwordless, Azure AD, Security Pillar",
             link: "https://azure-sec.health",
-            gallery: ["card/3.png","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/cloud/cl3.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/cloud/cl4.jpg"]
+            gallery: ["card/3.png", "/public/resources/img/portfolios/cloud/cl3.jpg", "/public/resources/img/portfolios/cloud/cl4.jpg"]
         },
         "hybrid-network": {
             title: "Foundational Hybrid Cloud Networking and Core Infrastructure Design",
@@ -268,7 +265,7 @@
             client: "Enterprise Migration",
             tools: "GNS3, Cisco IOS, VLAN, 802.1Q, OSPF, eBGP, ExpressRoute, VPN Gateway, NAT, DHCP, DNS, VNet, NSG, Router-on-a-Stick, Autonomous System",
             link: "https://hybrid-net.io",
-            gallery: ["card/4.jpg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/cloud/cl5.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/cloud/cl6.jpg"]
+            gallery: ["card/4.jpg", "/public/resources/img/portfolios/cloud/cl5.jpg", "/public/resources/img/portfolios/cloud/cl6.jpg"]
         },
         "4g-simulation": {
             title: "Architectural Performance Modeling for Distributed Network Systems",
@@ -278,7 +275,7 @@
             client: "Telecom R&D",
             tools: "Python, NumPy, Matplotlib, Seaborn, RSSI, Handover, UE Mobility, 4G LTE, Cost Algorithm, Threshold, Simulation, Delay, RCA, Performance Efficiency, Reliability",
             link: "https://4g-sim.com",
-            gallery: ["card/5.jpeg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/cloud/cl7.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/cloud/cl8.jpg"]
+            gallery: ["card/5.jpeg", "/public/resources/img/portfolios/cloud/cl7.jpg", "/public/resources/img/portfolios/cloud/cl8.jpg"]
         },
         "linux-devops": {
             title: "Designing and Optimizing Linux-Based Compute and DevOps Solutions for Cloud Platforms",
@@ -288,7 +285,7 @@
             client: "Cloud Ops Team",
             tools: "Bash, awk, sed, C, fork(), IPC, Semaphores, Message Queues, FCFS, SJF, RR, Linux, VM, RCA, Scheduling, Parallelism",
             link: "https://linux-devops.io",
-            gallery: ["card/1.jpg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/cloud/cl9.jpg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/cloud/cl10.jpg"]
+            gallery: ["card/1.jpg", "/public/resources/img/portfolios/cloud/cl9.jpg", "/public/resources/img/portfolios/cloud/cl10.jpg"]
         },
         "zencloud": {
             title: "ZenithDx - Architecting a High-Performance Hybrid AI Platform",
@@ -298,7 +295,7 @@
             client: "Cloud Ops Team",
             tools: "FastAPI, Uvicorn, NVIDIA DGX, MIG, Nginx, HTTPS, JWT, PostgreSQL, FAISS, ExpressRoute, AKS, Azure Arc, Hybrid Cloud, OPEX, CAPEX",
             link: "https://zencloud.ai",
-            gallery: ["card/15.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/zenith/z5.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/zenith/z6.jpg"]
+            gallery: ["card/15.jpg", "/public/resources/img/portfolios/zenith/z5.jpg", "/public/resources/img/portfolios/zenith/z6.jpg"]
         },
         // PRODUCT & LEADERSHIP (6 projects)
         "deafnav": {
@@ -309,7 +306,7 @@
             client: "EU Erasmus+",
             tools: "Figma, Flutter, Agile, Scrum, Jira, Confluence, Miro, WCAG, Accessibility, Sign Language, Real-Time Alerts, Emergency Chat, Domain Model, Sprints, Remote Collaboration",
             link: "https://deafnav.eu",
-            gallery: ["app/1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/prod/pr1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/prod/pr2.jpg"]
+            gallery: ["app/1.jpg", "/public/resources/img/portfolios/prod/pr1.jpg", "/public/resources/img/portfolios/prod/pr2.jpg"]
         },
         "zenithdx-pm": {
             title: "ZenithDx – End-to-End Product Management",
@@ -319,7 +316,7 @@
             client: "Hospital Chain",
             tools: "Jira, Figma, KLM, Fitts’ Law, Agile, MVP, VRAM, XAI, HITL, Stakeholder Management, UI/UX, Cross-Functional, Risk Mitigation, Feedback Loops, Acceptance Score",
             link: "https://zenithdx-pm.com",
-            gallery: ["app/2.jpeg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/zenith/z7.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/zenith/z8.jpg"]
+            gallery: ["app/2.jpeg", "/public/resources/img/portfolios/zenith/z7.jpg", "/public/resources/img/portfolios/zenith/z8.jpg"]
         },
         "ux-klm": {
             title: "Product Quality & UX Test Management",
@@ -329,7 +326,7 @@
             client: "Internal UX Lab",
             tools: "KLM, Fitts’ Law, Stopwatch, User Personas, Task Analysis, Completion Time, Usability Testing, Quantitative UX, Form Design, Keyboard Navigation, Mouse Interaction, Baseline Metrics, Iteration, Continuous Improvement, UX Lab",
             link: "https://ux-klm.com",
-            gallery: ["app/4.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/prod/pr3.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/prod/pr4.jpg"]
+            gallery: ["app/4.jpg", "/public/resources/img/portfolios/prod/pr3.jpg", "/public/resources/img/portfolios/prod/pr4.jpg"]
         },
         "whiteboxer": {
             title: "Product Quality Management - White-Box Test Strategy & Path Analysis",
@@ -339,7 +336,7 @@
             client: "Internal QA Team",
             tools: "White-Box Testing, CFG, Cyclomatic Complexity, Basis Paths, Test Plan, Input Values, Expected Outcomes, Code Coverage, Path Analysis, Infeasible Paths, Risk Management, QA Strategy, Validation, Technical Testing, Quality Assurance",
             link: "https://whiteboxer.qa",
-            gallery: ["app/3.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/prod/pr5.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/prod/pr6.jpg"]
+            gallery: ["app/3.jpg", "/public/resources/img/portfolios/prod/pr5.jpg", "/public/resources/img/portfolios/prod/pr6.jpg"]
         },
         "startup-week": {
             title: "Strategic Project Coordination & Product Lifecycle Immersion",
@@ -349,19 +346,19 @@
             client: "Startup Week Patras",
             tools: "Event Coordination, Stakeholder Management, Product Validation, UX, AI Integration, Cloud vs Edge, Panel Facilitation, Logistics, PwC, Yodiwo, VCs, Research, Entrepreneurship, Innovation, Cross-Functional",
             link: "https://startupweek.patras",
-            gallery: ["app/5.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/prod/pr7.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/prod/pr8.jpg"]
+            gallery: ["app/5.jpg", "/public/resources/img/portfolios/prod/pr7.jpg", "/public/resources/img/portfolios/prod/pr8.jpg"]
         },
 
         // GOVERNANCE & COMPLIANCE (5 projects)
         "xai-gov": {
             title: "Operationalizing an Explainable AI (XAI) Governance Framework for Auditable, High-Risk Systems",
             category: "Governance & Compliance",
-            brief: "As the compliance lead, I operationalized a comprehensive AI governance framework to mitigate the significant black box risk inherent in high-risk systems like medicine, ensuring alignment with regulatory mandates such as the GDPR's right to explanation and the principles of the EU AI Act. My role was to move from policy to execution by designing and analyzing the implementation of a full audit trail for AI-driven decisions, configuring a portfolio of XAI controls including model-agnostic tools (LIME/SHAP), model-specific techniques (Grad-CAM heatmaps for visual audits), and counterfactuals (to provide transparent 'what if' explanations). Furthermore, I planned for the consolidation of these controls on a unified governance platform (like OmniXAI) and, crucially, established a human-centric monitoring strategy using Simulatability to quantitatively measure and report on the effectiveness of these controls, proving they successfully build stakeholder trust and ensure responsible, auditable AI adoption.",
+            brief: "As the compliance lead, I operationalized a comprehensive AI governance framework to mitigate the significant black box risk inherent in high-risk systems like medicine, ensuring alignment with regulatory mandates such as the GDPR's right to explanation and the principles of the EU AI Act. My role was to move from policy to execution bydesigning and analyzing the implementation of a full audit trail for AI-driven decisions, configuring a portfolio of XAI controls including model-agnostic tools (LIME/SHAP), model-specific techniques (Grad-CAM heatmaps for visual audits), and counterfactuals (to provide transparent 'what if' explanations). Furthermore, I planned for the consolidation of these controls on a unified governance platform (like OmniXAI) and, crucially, established a human-centric monitoring strategy using Simulatability to quantitatively measure and report on the effectiveness of these controls, proving they successfully build stakeholder trust and ensure responsible, auditable AI adoption.",
             date: "2025",
             client: "Regulatory Body",
             tools: "OmniXAI, LIME, SHAP, Captum, Grad-CAM, Counterfactuals, Simulatability, GDPR, EU AI Act, Audit Trail, XAI Controls, Black Box Risk, Human-Centric, Stakeholder Trust, Responsible AI",
             link: "httpsias://xai-gov.eu",
-            gallery: ["icon/11.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/compl/c1.jpg","/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/compl/c2.jpg"]
+            gallery: ["icon/11.jpg", "/public/resources/img/portfolios/compl/c1.jpg", "/public/resources/img/portfolios/compl/c2.jpg"]
         },
         "csr-ai": {
             title: "Strategic Policy Design for Ethical AI and Sustainable CSR Governance",
@@ -371,7 +368,7 @@
             client: "CSRHELLAS",
             tools: "Policy Design, UN SDGs, CSR, Ethical AI, Cross-Functional, Informatics, Healthcare, Social Work, Sustainability, Transparency, Responsibility, Governance Framework, Long-Term Strategy, Innovation, Measurable Impact",
             link: "https://csr-ai.gr",
-            gallery: ["icon/2.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/compl/c3.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/compl/c4.jpg"]
+            gallery: ["icon/2.jpg", "/public/resources/img/portfolios/compl/c3.jpg", "/public/resources/img/portfolios/compl/c4.jpg"]
         },
         "zenithdx-gov": {
             title: "ZenithDx – AI Governance & Compliance Framework",
@@ -381,7 +378,7 @@
             client: "Hospital IRB",
             tools: "Purview, Model Cards, ISO 14971, IEC 62304, HIC, HITL, Self-Hosted, PHI, XAI, Grad-CAM, Captum, HSUS, Bias Monitoring, Fairness, Compliance Roadmap",
             link: "https://zenithdx-gov.com",
-            gallery: ["icon/9.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/zenith/z9.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/zenith/z10.jpg"]
+            gallery: ["icon/9.jpg", "/public/resources/img/portfolios/zenith/z9.jpg", "/public/resources/img/portfolios/zenith/z10.jpg"]
         },
         "bigdata-ethics": {
             title: "Strategic Analysis for a Big Data Ethics & Accountability Framework",
@@ -391,7 +388,7 @@
             client: "Ethics Institute",
             tools: "Critical Review, Policy Design, Causality, Knowledge, Choice, Hyper-Networked, Moral Responsibility, Power Structures, Collectors, Managers, Analysts, Governance Framework, Oversight, ChatGPT Audit, Ethical Accuracy, Accountability",
             link: "https://bigdata-ethics.org",
-            gallery: ["icon/10.jpeg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/compl/c5.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/compl/c6.jpg"]
+            gallery: ["icon/10.jpeg", "/public/resources/img/portfolios/compl/c5.jpg", "/public/resources/img/portfolios/compl/c6.jpg"]
         }
     });
 
@@ -417,25 +414,41 @@
             const link = $("[data-link]");
             link.href = project.link;
             link.textContent = "View Case Study";
-            
+
             // *UPDATED*: Populate gallery
             elements.swiperWrapper.innerHTML = project.gallery
                 .map(src => {
                     //
-                    // <<< --- FIX #2: ΧΡΗΣΙΜΟΠΟΙΟΥΜΕ ΤΟ BASE_PATH --- >>>
+                    // <<< --- START PROFESSIONAL PATH FIX (v2.7.0) --- >>>
+                    // This logic robustly handles all 3 path variations in the data object.
                     //
-                    // Ελέγχει αν το 'src' ξεκινά με '/'.
-                    // Αν ΝΑΙ (όπως το travel-db σου), το χρησιμοποιεί ως έχει.
-                    // Αν ΟΧΙ (όπως όλα τα άλλα), προσθέτει το BASE_PATH και το κανονικό path.
+                    let finalImgSrc;
+
+                    if (src.startsWith(BASE_PATH)) {
+                        // Case 1: Path is already correct (manually fixed by user)
+                        // e.g., /COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/zenith/z1.jpg
+                        finalImgSrc = src;
+
+                    } else if (src.startsWith('/')) {
+                        // Case 2: Path is absolute but missing BASE_PATH (broken)
+                        // e.g., /public/resources/img/portfolios/zenith/z3.jpg
+                        // FIX: Prepend BASE_PATH
+                        finalImgSrc = BASE_PATH + src;
+
+                    } else {
+                        // Case 3: Path is relative (broken)
+                        // e.g., web/1.jpg
+                        // FIX: Prepend BASE_PATH and the correct root folder, based on your manual fixes.
+                        finalImgSrc = `${BASE_PATH}/public/resources/img/portfolios/${src}`;
+                    }
                     //
-                    const imgSrc = src.startsWith('/') 
-                        ? src  // Χειρίζεται το "travel-db" που έφτιαξες: /COMPLETE-PORTFOLIO-WEBSITE/public/...
-                        : `${BASE_PATH}/public/resources/img/portfolios/${src}`; // Διορθώνει ΟΛΑ ΤΑ ΑΛΛΑ: /COMPLETE-PORTFOLIO-WEBSITE/resources/img/portfolios/web/1.jpg
-                    
+                    // <<< --- END PROFESSIONAL PATH FIX --- >>>
+                    //
+
                     // Added 'border-radius: 0;' to ensure images are rectangular.
                     return `
                         <div class="swiper-slide">
-                            <img src="${imgSrc}"
+                            <img src="${finalImgSrc}"
                                  alt="${project.title}"
                                  style="width: 100%; height: 100%; object-fit: contain; border-radius: 0;">
                         </div>
@@ -480,7 +493,7 @@
     elements.closeBtn.addEventListener("click", () => {
         const icon = elements.closeBtn.querySelector(".icon");
         if (icon) icon.classList.toggle(CLASSES.iconActive);
-        
+
         // Toggle description visibility
         const isHidden = elements.description.style.display === "none";
         elements.description.style.display = isHidden ? "grid" : "none";
