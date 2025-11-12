@@ -38,7 +38,7 @@
     //
     // <<< --- FIX #1: ΟΡΙΖΟΥΜΕ ΤΟΝ ΒΑΣΙΚΟ ΦΑΚΕΛΟ --- >>>
     //
-    const BASE_PATH = "/complete-portfolio-website";
+    const BASE_PATH = "/public";
     //
 
     // =============================================
@@ -439,7 +439,7 @@
                         // Case 3: Path is relative (broken)
                         // e.g., web/1.jpg
                         // FIX: Prepend BASE_PATH and the correct root folder, based on your manual fixes.
-                        finalImgSrc = `${BASE_PATH}/public/resources/img/portfolios/${src}`;
+                        finalImgSrc = `${BASE_PATH}/resources/img/portfolios/${src}`;
                     }
                     //
                     // <<< --- END PROFESSIONAL PATH FIX --- >>>
