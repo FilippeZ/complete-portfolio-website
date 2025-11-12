@@ -1,59 +1,65 @@
-# Name for your workflow
-name: Deploy Vite Project to GitHub Pages
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
 
-# Controls when the action will run
 on:
-  # Runs on pushes targeting the `main` branch
+  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# 1. ADD THIS ENTIRE PERMISSIONS BLOCK
-# This gives the GITHUB_TOKEN the permissions it needs to deploy to Pages
+# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
   contents: read
-  pages: write      # <-- This is the most important line
-  id-token: write   # <-- This is also required
+  pages: write
+  id-token: write
 
-# 2. ADD THIS ENTIRE CONCURRENCY BLOCK
-# This prevents multiple runs from conflicting and canceling each other
+# Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
-# Your jobs
+# Make secrets available to the build step
+env:
+  VITE_MAPBOX_ACCESS_TOKEN: ${{ secrets.VITE_MAPBOX_ACCESS_TOKEN }}
+  VITE_EMAILJS_ACCESS_TOKEN: ${{ secrets.VITE_EMAILJS_ACCESS_TOKEN }}
+
 jobs:
-  # Build job: builds your site
-  build:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up Node.js
+      - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Or your project's node version
-          cache: 'npm'
+          node-version: 20
+          cache: "npm"
       - name: Install dependencies
-        run: npm ci # 'ci' is faster and safer for workflows than 'install'
+        run: npm ci # 'ci' is safer for workflows than 'install'
       - name: Build
         run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3 # This packages your 'dist' folder
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # The folder Vite builds to
-
-  # Deploy job: takes the build and deploys it
-  deploy:
-    # This job needs the 'build' job to finish first
-    needs: build
-    runs-on: ubuntu-latest
-    # Grant the required permissions to the GITHUB_TOKEN
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
+          # Upload dist folder
+          path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # This is the step that was hanging
+        uses: actions/deploy-pages@v4
+
+
+### What to Do Next
+
+1.  **Commit** this updated workflow file to your `main` branch.
+2.  **Push** your commit to GitHub.
+3.  Go to the **"Actions"** tab on your repository.
+
+You should see the *new* workflow run, and this time it should complete successfully!
