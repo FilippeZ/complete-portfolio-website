@@ -38,7 +38,7 @@
     //
     // <<< --- FIX #1: ΟΡΙΖΟΥΜΕ ΤΟΝ ΒΑΣΙΚΟ ΦΑΚΕΛΟ --- >>>
     //
-    const BASE_PATH = "/COMPLETE-PORTFOLIO-WEBSITE";
+    const BASE_PATH = "/complete-portfolio-website";
     //
 
     // =============================================
