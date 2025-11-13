@@ -10,7 +10,7 @@
  * • Reduced motion support
  * • Graceful fallbacks & error handling
  *
- * @version 3.1.0 (Relative Pathing Fix)
+ * @version 3.1.1 (Absolute Pathing Fix)
  * @author ZenithDx
  */
 (() => {
@@ -36,11 +36,11 @@
     };
 
     //
-    // <<< --- ΟΡΙΖΟΥΜΕ ΤΟΝ ΒΑΣΙΚΟ ΦΑΚΕΛΟ (RELATIVE PATH) --- >>>
+    // <<< --- FIX #1: ΟΡΙΖΟΥΜΕ ΤΟΝ ΒΑΣΙΚΟ ΦΑΚΕΛΟ (ABSOLUTE PATH) --- >>>
     //
-    // Χωρίς την μπροστινή κάθετο ("/"). Αυτό το καθιστά ΣΧΕΤΙΚΗ
-    // διαδρομή με το index.html, που δουλεύει ΠΑΝΤΟΥ (local, GitHub Pages, κλπ).
-    const BASE_PATH = "public";
+    // Αλλάζουμε αυτό σε ΑΠΟΛΥΤΗ διαδρομή (absolute path)
+    // με βάση το αίτημά σας. Η μπροστινή κάθετος ("/") είναι απαραίτητη.
+    const BASE_PATH = "/complete-portfolio-website";
     //
     // Αυτή είναι η ρίζα για όλες τις εικόνες του portfolio.
     const PORTFOLIO_ASSET_ROOT = `${BASE_PATH}/resources/img/portfolios/`;
@@ -148,7 +148,13 @@
             client: "Major Hospital Network",
             tools: "CDSS, S2A-UNet, ResNet-50, RAG, FAISS, BM25, ColBERT, HGT, HL7, FHIR, DICOM, MIMIC-IV-ED, MIMIC-CXR-JPG, SciBERT, BGE",
             link: "https://zenithdx-data.com",
-            gallery: ["/complete-portfolio-website/resources/img/portfolios/web/1.jpg", "zenith/z1.jpg", "zenith/z2.jpg"]
+            //
+            // <<< --- FIX #2: CLEANED 'gallery' data --- >>>
+            // This path is now relative, like all the others.
+            // The absolute path "/complete-portfolio-website/..." was incorrect
+            // and caused the bug.
+            //
+            gallery: ["web/1.jpg", "zenith/z1.jpg", "zenith/z2.jpg"]
         },
         "travel-db": {
             title: "Relational Database Architecture, Modeling, and Data Logic Layer Implementation",
@@ -423,13 +429,15 @@
             elements.swiperWrapper.innerHTML = project.gallery
                 .map(src => {
                     //
-                    // <<< --- START PROFESSIONAL PATH FIX (v3.1.0) --- >>>
-                    // Τα δεδομένα στο Section 5 έχουν καθαριστεί. Όλα τα paths
-                    // είναι πλέον "καθαρά" (π.χ., "zenith/z1.jpg").
-                    // Η σταθερά PORTFOLIO_ASSET_ROOT είναι πλέον "public/resources/..."
+                    // <<< --- START PROFESSIONAL PATH FIX (v3.1.1) --- >>>
                     //
-                    // Αυτή η μία γραμμή δημιουργεί το ΣΧΕΤΙΚΟ path
-                    // (π.χ. "public/resources/img/portfolios/zenith/z1.jpg")
+                    // Με τις 2 παραπάνω διορθώσεις (Sections 1 & 5),
+                    // αυτή η λογική είναι πλέον σωστή.
+                    //
+                    // PORTFOLIO_ASSET_ROOT = "/complete-portfolio-website/resources/img/portfolios/"
+                    // src = "web/1.jpg" (ΠΑΡΑΔΕΙΓΜΑ)
+                    //
+                    // finalImgSrc = "/complete-portfolio-website/resources/img/portfolios/web/1.jpg"
                     //
                     const finalImgSrc = PORTFOLIO_ASSET_ROOT + src;
                     //
