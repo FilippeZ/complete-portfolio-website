@@ -10,7 +10,7 @@
  * • Reduced motion support
  * • Graceful fallbacks & error handling
  *
- * @version 3.0.0 (Data-First Refactor)
+ * @version 3.1.0 (Relative Pathing Fix)
  * @author ZenithDx
  */
 (() => {
@@ -36,9 +36,12 @@
     };
 
     //
-    // <<< --- ΟΡΙΖΟΥΜΕ ΤΟΝ ΒΑΣΙΚΟ ΦΑΚΕΛΟ --- >>>
+    // <<< --- ΟΡΙΖΟΥΜΕ ΤΟΝ ΒΑΣΙΚΟ ΦΑΚΕΛΟ (RELATIVE PATH) --- >>>
     //
-    const BASE_PATH = "/public";
+    // Χωρίς την μπροστινή κάθετο ("/"). Αυτό το καθιστά ΣΧΕΤΙΚΗ
+    // διαδρομή με το index.html, που δουλεύει ΠΑΝΤΟΥ (local, GitHub Pages, κλπ).
+    const BASE_PATH = "public";
+    //
     // Αυτή είναι η ρίζα για όλες τις εικόνες του portfolio.
     const PORTFOLIO_ASSET_ROOT = `${BASE_PATH}/resources/img/portfolios/`;
     //
@@ -131,10 +134,9 @@
     }
 
     // =============================================
-    // 5. PROJECT DATA REPOSITORY (CLEANED & REFACTORED)
+    // 5. PROJECT DATA REPOSITORY (CLEANED)
     // =============================================
-    // ΟΛΑ τα paths στο 'gallery' είναι τώρα "καθαρά" και
-    // σχετικά με τον φάκελο /public/resources/img/portfolios/
+    // Όλα τα paths είναι καθαρά και σχετικά.
     //
     const PROJECTS = Object.freeze({
         // DATA & ANALYTICS (6 projects)
@@ -421,11 +423,13 @@
             elements.swiperWrapper.innerHTML = project.gallery
                 .map(src => {
                     //
-                    // <<< --- START PROFESSIONAL PATH FIX (v3.0.0) --- >>>
+                    // <<< --- START PROFESSIONAL PATH FIX (v3.1.0) --- >>>
                     // Τα δεδομένα στο Section 5 έχουν καθαριστεί. Όλα τα paths
                     // είναι πλέον "καθαρά" (π.χ., "zenith/z1.jpg").
+                    // Η σταθερά PORTFOLIO_ASSET_ROOT είναι πλέον "public/resources/..."
                     //
-                    // Αυτή η μία γραμμή είναι πλέον όλη η λογική που χρειαζόμαστε.
+                    // Αυτή η μία γραμμή δημιουργεί το ΣΧΕΤΙΚΟ path
+                    // (π.χ. "public/resources/img/portfolios/zenith/z1.jpg")
                     //
                     const finalImgSrc = PORTFOLIO_ASSET_ROOT + src;
                     //
