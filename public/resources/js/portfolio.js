@@ -141,7 +141,7 @@
             client: "Major Hospital Network",
             tools: "CDSS, S2A-UNet, ResNet-50, RAG, FAISS, BM25, ColBERT, HGT, HL7, FHIR, DICOM, MIMIC-IV-ED, MIMIC-CXR-JPG, SciBERT, BGE",
             link: "https://zenithdx-data.com",
-            gallery: ["web/1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/zenith/z1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/zenith/z2.jpg"]
+            gallery: ["/resources/img/portfolios/web/1.jpg", "/resources/img/portfolios/zenith/z1.jpg", "/resources/img/portfolios/zenith/z2.jpg"]
         },
         "travel-db": {
             title: "Relational Database Architecture, Modeling, and Data Logic Layer Implementation",
@@ -151,7 +151,7 @@
             client: "Global Travel Co",
             tools: "MySQL, Java Swing, JDBC, Stored Procedures, Triggers, ERD, Normalization, ETL, Data Integrity, Constraints, CRUD, Indexing, Query Optimization, Transactions, ACID",
             link: "https://traveldb.app",
-            gallery: ["web/5.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/database/db1.jpg", "/COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/database/db2.jpg"]
+            gallery: ["/resources/img/portfolios/web/5.jpg", "/resources/img/portfolios/database/db1.jpg", "/resources/img/portfolios/database/db2.jpg"]
         },
         "etl-covid": {
             title: "End-to-End ETL Pipeline Architecture for Economic Impact Analytics",
