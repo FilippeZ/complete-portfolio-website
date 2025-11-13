@@ -148,7 +148,7 @@
             client: "Major Hospital Network",
             tools: "CDSS, S2A-UNet, ResNet-50, RAG, FAISS, BM25, ColBERT, HGT, HL7, FHIR, DICOM, MIMIC-IV-ED, MIMIC-CXR-JPG, SciBERT, BGE",
             link: "https://zenithdx-data.com",
-            gallery: ["web/1.jpg", "zenith/z1.jpg", "zenith/z2.jpg"]
+            gallery: ["/complete-portfolio-website/resources/img/portfolios/web/1.jpg", "zenith/z1.jpg", "zenith/z2.jpg"]
         },
         "travel-db": {
             title: "Relational Database Architecture, Modeling, and Data Logic Layer Implementation",
