@@ -10,7 +10,7 @@
  * • Reduced motion support
  * • Graceful fallbacks & error handling
  *
- * @version 2.7.0 (Robust Pathing Logic Fix)
+ * @version 2.8.0 (Robust Pathing Logic Fix)
  * @author ZenithDx
  */
 (() => {
@@ -280,7 +280,7 @@
         "linux-devops": {
             title: "Designing and Optimizing Linux-Based Compute and DevOps Solutions for Cloud Platforms",
             category: "Cloud Solutions",
-            brief: "This project demonstrates deep technical expertise in Linux compute and DevOps automation, which are foundational for architecting reliable IaaS/PaaS solutions. I developed a comprehensive Bash script (logparser.sh) to perform mission-critical operational tasks, such as parsing web server logs from Linux VMs for Root Cause Analysis (RCA) and incident management. This script utilizes core tools like awk and sed to filter logs by network protocol (IPv4/IPv6), user ID, and other criteria, directly supporting network and security diagnostics. Furthermore, I engineered concurrent C applications using fork(), IPC (message queues), and semaphores to model high-performance, parallelized workloads, providing the deep OS-level understanding necessary to optimize Azure compute services like AKS or HPC. This was complemented by a performance analysis of CPU scheduling algorithms (FCFS, SJF, RR), demonstrating the ability to analyze and optimize resource management for platform stability and efficiency, aligning with the Azure Well-Architected Framework.",
+            brief: "This project demonstrates deep technical expertise in Linux compute and DevOps automation, which are foundational for architecting reliable IaaS/PaaS solutions. I developed a comprehensive Bash script (logparser.sh) to perform mission-critical operational tasks, such as parsing web server logs from Linux VMs for Root Cause Analysis (RCA) and incident management. This script utilizes core tools like awk and sed to filter logs by network protocol (IPv4/IPv6), user ID, and other criteria, directly supporting network and security diagnostics. Furthermore, I engineered concurrent C applications using fork(), IPC (message queues), and semhores to model high-performance, parallelized workloads, providing the deep OS-level understanding necessary to optimize Azure compute services like AKS or HPC. This was complemented by a performance analysis of CPU scheduling algorithms (FCFS, SJF, RR), demonstrating the ability to analyze and optimize resource management for platform stability and efficiency, aligning with the Azure Well-Architected Framework.",
             date: "2024",
             client: "Cloud Ops Team",
             tools: "Bash, awk, sed, C, fork(), IPC, Semaphores, Message Queues, FCFS, SJF, RR, Linux, VM, RCA, Scheduling, Parallelism",
@@ -419,26 +419,31 @@
             elements.swiperWrapper.innerHTML = project.gallery
                 .map(src => {
                     //
-                    // <<< --- START PROFESSIONAL PATH FIX (v2.7.0) --- >>>
-                    // This logic robustly handles all 3 path variations in the data object.
+                    // <<< --- START PROFESSIONAL PATH FIX (v2.8.0) --- >>>
+                    // This logic robustly handles all 4 path variations in the data object.
+                    // The order of checks is critical: from most specific (broken) to most general.
                     //
                     let finalImgSrc;
+                    const brokenPrefix = "/COMPLETE-PORTFOLIO-WEBSITE";
 
-                    if (src.startsWith(BASE_PATH)) {
-                        // Case 1: Path is already correct (manually fixed by user)
-                        // e.g., /COMPLETE-PORTFOLIO-WEBSITE/public/resources/img/portfolios/zenith/z1.jpg
+                    if (src.startsWith(brokenPrefix)) {
+                        // Case 1: Path is /COMPLETE-PORTFOLIO-WEBSITE/public/... (Broken Prefix)
+                        // FIX: Remove the broken prefix.
+                        finalImgSrc = src.replace(brokenPrefix, ""); // Result: /public/resources/...
+
+                    } else if (src.startsWith(BASE_PATH)) {
+                        // Case 2: Path is already correct (e.g., /public/resources/...)
+                        // FIX: Use as-is.
                         finalImgSrc = src;
 
                     } else if (src.startsWith('/')) {
-                        // Case 2: Path is absolute but missing BASE_PATH (broken)
-                        // e.g., /public/resources/img/portfolios/zenith/z3.jpg
-                        // FIX: Prepend BASE_PATH
-                        finalImgSrc = BASE_PATH + src;
+                        // Case 3: Path is absolute but missing BASE_PATH (e.g., /resources/...)
+                        // FIX: Prepend BASE_PATH.
+                        finalImgSrc = BASE_PATH + src; // Result: /public/resources/...
 
                     } else {
-                        // Case 3: Path is relative (broken)
-                        // e.g., web/1.jpg
-                        // FIX: Prepend BASE_PATH and the correct root folder, based on your manual fixes.
+                        // Case 4: Path is relative (e.g., web/1.jpg)
+                        // FIX: Prepend BASE_PATH and the root image folder.
                         finalImgSrc = `${BASE_PATH}/resources/img/portfolios/${src}`;
                     }
                     //
